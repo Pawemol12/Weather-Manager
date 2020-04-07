@@ -5,7 +5,7 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\User;
-use App\Enum\UserRoles;
+use App\Enum\UserRolesEnum;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserFixture extends Fixture
@@ -23,21 +23,21 @@ class UserFixture extends Fixture
                 'username' => 'user_user',
                 'password' => '0000',
                 'roles' => [
-                    UserRoles::USER_ROLE_USER,
+                    UserRolesEnum::USER_ROLE_USER,
                 ]
             ],
             [
                 'username' => 'user_mod',
                 'password' => '0000',
                 'roles' => [
-                    UserRoles::USER_ROLE_MOD,
+                    UserRolesEnum::USER_ROLE_MOD,
                 ]
             ],
             [
                 'username' => 'user_admin',
                 'password' => '0000',
                 'roles' => [
-                    UserRoles::USER_ROLE_MOD,
+                    UserRolesEnum::USER_ROLE_ADMIN,
                 ]
             ],
         ];

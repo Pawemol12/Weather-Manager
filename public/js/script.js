@@ -287,4 +287,28 @@ $(document).ready(function () {
     $('.datetimepicker').datetimepicker({
         locale: 'pl'
     });
+
+    //Pokazywanie pogody dla miasta
+    $('body').on('submit', '#WeatherSearchForm', function (e) {
+        e.preventDefault();
+        $(this).ajaxSubmit(
+            {
+                success: function (resp) {
+                    if (typeof resp === 'object') {
+                        switch (resp.type) {
+                            case 'alert': {
+                                alertBS('#alertContainer', resp.message, resp.alert_type);
+                                break;
+                            }
+                        }
+                    } else {
+                        $('#WeatherShowPanelWrapper').html(resp);
+                        copyAlerts('#hiddenAlerts', '#alertContainer', true);
+                    }
+                },
+                error: function () {
+                    alertBS('#alertContainer', 'Wystąpił błąd podczas wyszukiwania', ALERT_ERROR);
+                },
+            });
+    });
 });

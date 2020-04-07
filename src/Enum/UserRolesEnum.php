@@ -9,7 +9,7 @@ namespace App\Enum;
  * 
  * @author Paweł Lodzik <Pawemol12@gmail.com>
  */
-abstract class UserRoles {
+abstract class UserRolesEnum {
     const USER_ROLE_ADMIN = 'ROLE_ADMIN';
     const USER_ROLE_MOD = 'ROLE_MOD';
     const USER_ROLE_USER = 'ROLE_USER';

@@ -1,0 +1,21 @@
+{% if cityWeatherData is defined and cityWeatherData is not empty %}
+<div id="WeatherShowPanel">
+    <h2>{% trans with {'{{ city }}' : cityWeatherData.name}%}weatherInCity{% endtrans %}</h2>
+    <hr/>
+    <p>{% trans with {'{{ dt }}' : cityWeatherData.date|date('Y-m-d H:i:s')}%}weatherDate{% endtrans %}</p>
+    <span>Temperatura <b>{{ cityWeatherData.main.temp }}</b> °C</span><br/>
+    <span>Temperatura odczuwalna <b>{{ cityWeatherData.main.feels_like }}</b> °C</span><br/>
+    <span>Temperatura minimalna <b>{{ cityWeatherData.main.temp_min }}</b> °C</span><br/>
+    <span>Temperatura maksymalna <b>{{ cityWeatherData.main.temp_max }}</b> °C</span><br/><br/>
+
+    <span>Ciśnienie <b>{{ cityWeatherData.main.pressure }}</b> hPa</span><br/>
+    <span>Wilgotność <b>{{ cityWeatherData.main.humidity }}</b>%</span><br/><br/>
+
+    <span>Wiatr <b>{{ cityWeatherData.wind.speed * (0.001/(1/3600)) }}</b> km/h</span><br/>
+
+</div>
+{% endif %}
+
+{% if ajax is defined and ajax %}
+    {% include 'snippets/hiddenAlerts.html.twig' %}
+{% endif %}

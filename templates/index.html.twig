@@ -4,7 +4,30 @@
 {% block stylesheets %}
 {% endblock %}
 {% block body %}
-    <h1>To jest strona testowa</h1>
+
+    <div class="row">
+        <div class="col">
+            {% include 'snippets/alertContainer.html.twig' %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div id="WeatherShowFormWrapper">
+                {% include 'main/weatherShowForm.html.twig' %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div id="WeatherShowPanelWrapper">
+                {% include 'main/weatherShowPanel.html.twig' %}
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}
 {% block javascripts %}
 {% endblock %}

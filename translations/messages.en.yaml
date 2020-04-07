@@ -3,8 +3,21 @@ password: Password
 or: Or
 usernamePlaceholder: Enter Username
 passwordPlaceholder: Enter password
-
+show: Show
 app:
   title: Weather Manager
   mainPage:
     title: Weather Manager - Mainpage
+
+alertTitles:
+  info: Informacja.
+  success: Sukces!
+  warning: Uwaga!
+  error: Błąd.
+formErrors:
+  submitError: Nieprawidłowe dane formularza
+
+errors:
+  apiUrlRequestError: Podczas wysyłania zapytania do api wystąpił problem.
+  apiKeyNotConfigured: Klucz api nie jest prawidłowo skonfigurowany!
+  apiResponseError: Wysyąpił bład podczas odpowiedzi api. Kod błędu {{ errorCode }} - wiadomość - {{ message }}

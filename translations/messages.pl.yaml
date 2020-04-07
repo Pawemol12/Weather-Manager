@@ -3,6 +3,12 @@ password: Hasło
 or: Or
 usernamePlaceholder: Wprowadź nazwę użytkownika
 passwordPlaceholder: Wprowadź hasło
+show: Pokaż
+city:
+  name: Miasto
+
+weatherInCity: Pogoda w {{ city }}
+weatherDate: Stan pogody na {{ dt }}
 
 app:
   title: Menedżer pogody
