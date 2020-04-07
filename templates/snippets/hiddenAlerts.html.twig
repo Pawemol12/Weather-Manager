@@ -1,10 +1,9 @@
+{% import "snippets/alert.html.twig" as alertRenderer %}
+
 <div id="hiddenAlerts">
     {% if alerts is defined and alerts is not empty %}
         {% for alert in alerts %}
-            {% include 'snippets/alert.html.twig' with {
-                'alertType' : alert.type,
-                'alertMessage' : alert.message
-            } %}
+            {{ alertRenderer.renderAlert(alert.type, alert.message) }}
         {% endfor %}
     {% endif %}
 </div>

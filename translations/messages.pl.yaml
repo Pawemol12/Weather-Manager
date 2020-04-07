@@ -4,6 +4,7 @@ or: Or
 usernamePlaceholder: Wprowadź nazwę użytkownika
 passwordPlaceholder: Wprowadź hasło
 show: Pokaż
+save: Zapisz
 city:
   name: Miasto
 
@@ -16,3 +17,13 @@ app:
     title: Menedżer pogody - strona główna
   loginPage:
     title: Menedżer pogody - logowanie
+
+settings:
+  title: Ustawienia Api i strony
+  saveSuccess: Pomyślnie zapisano ustawienia.
+  saveError: Nie udało się zapisać formularza ustawień. Wystąpił błąd {{ error }}.
+
+  apiKey: Klucz API
+  weatherInfoByCityAndStateLink: Link do informacji po mieście i państwie(bądź województwie, czy regione)
+  weatherInfoByCityIdLink: Link do informacji po id miasta
+  weatherInfoByCityLink: Link do informacji po nazwie miasta

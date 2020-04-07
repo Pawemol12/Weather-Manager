@@ -11,7 +11,6 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use App\Repository\CityRepository;
 use App\Service\WeatherApiService;
 use App\Form\WeatherShowForm;
@@ -92,7 +91,8 @@ class MainController extends AbstractController {
         if ($request->isXmlHttpRequest()) {
             return $this->render('main/weatherShowPanel.html.twig', [
                 'cityWeatherData' => $cityWeatherData,
-                'alerts' => $alerts
+                'alerts' => $alerts,
+                'ajax' => true
             ]);
         }
 
