@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light mainmenu">
+    <a class="navbar-brand" target="_self" href="/">
+        {% trans %}app.title{% endtrans %}
+    </a>
+
+    <div id="navbar" class="navbar-collapse collapse ">
+        <ul class="nav navbar-nav">
+
+        </ul>
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#">{{ app.user.username }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true">Wyloguj</span></a></li>
+        </ul>
+    </div>
+</nav>

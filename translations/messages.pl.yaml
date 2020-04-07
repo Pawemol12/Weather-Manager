@@ -1,0 +1,12 @@
+username: Nazwa użytkownika
+password: Hasło
+or: Or
+usernamePlaceholder: Wprowadź nazwę użytkownika
+passwordPlaceholder: Wprowadź hasło
+
+app:
+  title: Menedżer pogody
+  mainPage:
+    title: Menedżer pogody - strona główna
+  loginPage:
+    title: Menedżer pogody - logowanie

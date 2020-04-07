@@ -1,0 +1,10 @@
+username: Username
+password: Password
+or: Or
+usernamePlaceholder: Enter Username
+passwordPlaceholder: Enter password
+
+app:
+  title: Weather Manager
+  mainPage:
+    title: Weather Manager - Mainpage
