@@ -1,6 +1,6 @@
 {% if cityWeatherData is defined and cityWeatherData is not empty %}
 <div id="WeatherShowPanel">
-    <h2>{% trans with {'{{ city }}' : cityWeatherData.name}%}weatherInCity{% endtrans %}</h2>
+    <h3>{% trans with {'{{ city }}' : cityWeatherData.name}%}weatherInCity{% endtrans %}</h3>
     <hr/>
     <p>{% trans with {'{{ dt }}' : cityWeatherData.date|date('Y-m-d H:i:s')}%}weatherDate{% endtrans %}</p>
     <span>Temperatura <b>{{ cityWeatherData.main.temp }}</b> °C</span><br/>

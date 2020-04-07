@@ -311,4 +311,13 @@ $(document).ready(function () {
                 },
             });
     });
+
+    //Akcje na miastach
+    bindAjaxModalForm('#addCityBtn', '#CityFormModal');
+    bindAjaxModalForm('.btnCityEdit', '#CityFormModal');
+    bindAjaxModalForm('.btnCityDelete', '#CityDeleteModal');
+
+    bindForm('#CityForm','#CitiesTableWrapper', '#CityFormModal');
+    bindDeleteModal('#CityDeleteModal', '#confirmBtn', '#cancelBtn', '#CitiesTableWrapper');
+
 });

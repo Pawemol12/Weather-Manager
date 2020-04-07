@@ -1,0 +1,26 @@
+<table class="table table-striped table-bordered nowrap">
+    <thead class="thead-light">
+        <th scope="col">{% trans %}lp{% endtrans %}</th>
+        <th scope="col">{% trans %}city.name{% endtrans %}</th>
+        <th scope="col">{% trans %}city.state{% endtrans %}</th>
+        <th scope="col">{% trans %}city.apiCityId{% endtrans %}</th>
+        <th scope="col">{% trans %}city.lastWeatherDataUpdate{% endtrans %}</th>
+        <th scope="col">{% trans %}actions{% endtrans %}</th>
+    </thead>
+
+    <tbody>
+        {% for city in cities %}
+            <tr>
+                <td scope="row">{{ loop.index }}</td>
+                <td>{{ city.name }}</td>
+                <td>{{ city.state }}</td>
+                <td>{{ city.apiCityId }}</td>
+                <td>{{ city.lastWeatherDataUpdate ? city.lastWeatherDataUpdate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <button class="btn btn-primary fas fa-edit btnAction btnCityEdit" data-action="{{ path('cities_edit', {'cityId' : city.id }) }}"></button>
+                    <button class="btn btn-danger fas fa-trash btnAction btnCityDelete" data-action="{{ path('cities_delete', {'cityId' : city.id }) }}"></button>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

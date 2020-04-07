@@ -5,11 +5,29 @@ usernamePlaceholder: Wprowadź nazwę użytkownika
 passwordPlaceholder: Wprowadź hasło
 show: Pokaż
 save: Zapisz
+lp: Lp.
+yes: Tak
+no: Nie
 city:
-  name: Miasto
+  name: Nazwa Miasta
+  state: Region
+  apiCityId: Id miasta w API
+  lastWeatherDataUpdate: Data ostatniej aktualizacji
+  add: Dodaj miasto
+  addTitle: Dodawanie nowego miasta
+  saveFail: Niestety nie udało się zapisać miasta. Błąd {{ message }}
+  saveSuccess: Pomyślnie zapisano miasto.
+  notExist: Takie miasto nie istnieje!
+  editTitle: Edycja miasta {{ name }}
+  successfullyDeleted: Pomyślnie usunięto miasto!
+  deleteTitle: Usuwanie miasta {{ name }}
+  deleteQuestion: Czy na pewno chcesz usunąć miasto?
+
+actions: Akcje
 
 weatherInCity: Pogoda w {{ city }}
 weatherDate: Stan pogody na {{ dt }}
+noResult: Brak wyników
 
 app:
   title: Menedżer pogody
@@ -27,3 +45,5 @@ settings:
   weatherInfoByCityAndStateLink: Link do informacji po mieście i państwie(bądź województwie, czy regione)
   weatherInfoByCityIdLink: Link do informacji po id miasta
   weatherInfoByCityLink: Link do informacji po nazwie miasta
+cities:
+  title: Miasta

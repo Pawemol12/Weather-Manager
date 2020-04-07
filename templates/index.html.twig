@@ -1,9 +1,15 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}{% trans %}app.mainPage.title{% endtrans %}{% endblock %}
+{% set title='app.mainPage.title'|trans %}
+{% block title %}{{ title }}{% endblock %}
 {% block stylesheets %}
 {% endblock %}
 {% block body %}
+    <div class="row">
+        <div class="col">
+            <h2>{{ title }}</h2>
+            <hr/>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col">

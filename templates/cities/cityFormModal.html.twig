@@ -1,0 +1,5 @@
+{% extends 'snippets/modalForm.html.twig' %}
+{% set ModalId = 'CityFormModal' %}
+{% block form %}
+    {{ include('cities/cityForm.html.twig', { 'form': form }) }}
+{% endblock %}
