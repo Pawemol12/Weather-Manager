@@ -8,6 +8,7 @@ save: Zapisz
 lp: Lp.
 yes: Tak
 no: Nie
+logout: Wyloguj
 city:
   name: Nazwa Miasta
   state: Region
@@ -35,6 +36,9 @@ app:
     title: Menedżer pogody - strona główna
   loginPage:
     title: Menedżer pogody - logowanie
+  menu:
+    cities: Miasta
+    settings: Ustawienia
 
 settings:
   title: Ustawienia Api i strony
@@ -47,3 +51,14 @@ settings:
   weatherInfoByCityLink: Link do informacji po nazwie miasta
 cities:
   title: Miasta
+
+error:
+  pageTitle: Błąd
+  errorNo: Numer błędu
+  404.title: Szukana przez Ciebie strona nie istnieje.
+  404.desc: Upewnij się, że podany adres jest prawidłowy lub skontaktuj się z administratorem strony w celu rozwiązania problemu.
+  403.title: Brak dostępu do podanej strony.
+  403.desc: Nie masz dostępu do tej strony. W przypadku niejasności skontaktuj się z administratorem.
+  default.title: Wystąpił nieoczekiwany błąd.
+  default.desc: Coś poszło nie tak. Jeśli błąd będzie się powtarzał skontaktuj się z administratorem strony w celu jego rozwiązania.
+returnToDefaultPage: Powrót do strony głównej

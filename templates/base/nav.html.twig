@@ -9,11 +9,18 @@
 
     <div id="navbarSupportedContent" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-
+            {% if is_granted(constant('App\\Enum\\UserRolesEnum::USER_ROLE_MOD')) %}
+                <li class="nav-item">
+                    <a class="nav-link {% if page is defined and page == constant('App\\Enum\\PagesEnum::CITIES_PAGE') %}active{% endif %}" href="{{ path('cities') }}">{% trans %}app.menu.cities{% endtrans %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if page is defined and page == constant('App\\Enum\\PagesEnum::SETTINGS_PAGE') %}active{% endif %}" href="{{ path('settings') }}">{% trans %}app.menu.settings{% endtrans %}</a>
+                </li>
+            {% endif %}
         </ul>
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="#">{{ app.user.username }}</a></li>
-            <li class="nav-item"><a class="nav-link" href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true">Wyloguj</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true">{% trans %}logout{% endtrans %}</span></a></li>
         </ul>
     </div>
 </nav>

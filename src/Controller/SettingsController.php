@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\ApiSettings;
 use App\Enum\AlertsEnum;
 use App\Enum\ApiSettingsEnum;
+use App\Enum\UserRolesEnum;
 use App\Form\SettingsForm;
 use App\Repository\ApiSettingsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,6 +13,7 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use App\Enum\PagesEnum;
 
 class SettingsController extends AbstractController
 {
@@ -20,10 +22,13 @@ class SettingsController extends AbstractController
      */
     public function index(ApiSettingsRepository $apiSettingsRepository)
     {
+        $this->denyAccessUnlessGranted(UserRolesEnum::USER_ROLE_MOD);
+
         $settingsForm = $this->createSettingsForm($apiSettingsRepository);
 
         return $this->render('settings/index.html.twig', [
             'settingsForm' => $settingsForm->createView(),
+            'page' => PagesEnum::SETTINGS_PAGE
         ]);
     }
 
@@ -32,6 +37,8 @@ class SettingsController extends AbstractController
      */
     public function saveSettings(Request $request, ApiSettingsRepository $apiSettingsRepository, TranslatorInterface $translator)
     {
+        $this->denyAccessUnlessGranted(UserRolesEnum::USER_ROLE_MOD);
+
         $settingsForm = $this->createSettingsForm($apiSettingsRepository);
         $settingsForm->handleRequest($request);
 

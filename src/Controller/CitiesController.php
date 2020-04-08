@@ -13,6 +13,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use App\Entity\City;
 use App\Form\CityType;
+use App\Enum\UserRolesEnum;
+use App\Enum\PagesEnum;
 
 class CitiesController extends AbstractController
 {
@@ -21,10 +23,13 @@ class CitiesController extends AbstractController
      */
     public function index(CityRepository $cityRepository)
     {
+        $this->denyAccessUnlessGranted(UserRolesEnum::USER_ROLE_MOD);
+
         $cities = $cityRepository->findAll();
 
         return $this->render('cities/index.html.twig', [
             'cities' => $cities,
+            'page' => PagesEnum::CITIES_PAGE
         ]);
     }
 
@@ -37,6 +42,8 @@ class CitiesController extends AbstractController
      */
     public function addCity(Request $request, CityRepository $cityRepository, TranslatorInterface $translator)
     {
+        $this->denyAccessUnlessGranted(UserRolesEnum::USER_ROLE_MOD);
+
         $newCityForm = $this->createCityForm();
         $newCityForm->handleRequest($request);
 
@@ -86,6 +93,8 @@ class CitiesController extends AbstractController
      */
     public function editCity(int $cityId, Request $request, CityRepository $cityRepository, TranslatorInterface $translator)
     {
+        $this->denyAccessUnlessGranted(UserRolesEnum::USER_ROLE_MOD);
+
         /**
          * @var City
          */
@@ -149,6 +158,8 @@ class CitiesController extends AbstractController
      */
     public function deleteCity(int $cityId, Request $request, CityRepository $cityRepository, TranslatorInterface $translator)
     {
+        $this->denyAccessUnlessGranted(UserRolesEnum::USER_ROLE_MOD);
+
         /**
          * @var City
          */
