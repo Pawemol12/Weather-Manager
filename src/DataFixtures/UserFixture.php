@@ -8,14 +8,27 @@ use App\Entity\User;
 use App\Enum\UserRolesEnum;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+/**
+ * @author Paweł Lodzik <Pawemol12@gmail.com>
+ */
 class UserFixture extends Fixture
 {
+    /**
+     * @var UserPasswordEncoderInterface
+     */
     private $encoder;
-    
+
+    /**
+     * UserFixture constructor.
+     * @param UserPasswordEncoderInterface $encoder
+     */
     public function __construct(UserPasswordEncoderInterface $encoder) {
         $this->encoder = $encoder;
     }
-    
+
+    /**
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         $usersInfo = [

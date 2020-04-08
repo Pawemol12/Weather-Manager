@@ -7,8 +7,15 @@ use App\Enum\ApiSettingsEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
+/**
+ * Class ApiSettingsFixture
+ * @package App\DataFixtures
+ */
 class ApiSettingsFixture extends Fixture
 {
+    /**
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         $apiSettingsArray = [

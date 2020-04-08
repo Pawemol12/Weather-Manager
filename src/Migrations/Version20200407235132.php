@@ -4,19 +4,27 @@ declare(strict_types=1);
 
 namespace DoctrineMigrations;
 
+use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\AbstractMigration;
 
 /**
- * Auto-generated Migration: Please modify to your needs!
+ * @author Paweł Lodzik <Pawemol12@gmail.com>
  */
 final class Version20200407235132 extends AbstractMigration
 {
+    /**
+     * @return string
+     */
     public function getDescription() : string
     {
         return 'Makes city name property unique.';
     }
 
+    /**
+     * @param Schema $schema
+     * @throws DBALException
+     */
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
@@ -25,6 +33,10 @@ final class Version20200407235132 extends AbstractMigration
         $this->addSql('CREATE UNIQUE INDEX UNIQ_2D5B02345E237E06 ON city (name)');
     }
 
+    /**
+     * @param Schema $schema
+     * @throws DBALException
+     */
     public function down(Schema $schema) : void
     {
         // this down() migration is auto-generated, please modify it to your needs

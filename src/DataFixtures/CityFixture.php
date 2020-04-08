@@ -6,9 +6,14 @@ use App\Entity\City;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
+/**
+ * @author Paweł Lodzik <Pawemol12@gmail.com>
+ */
 class CityFixture extends Fixture
 {
-    
+    /**
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         $citiesArray = [

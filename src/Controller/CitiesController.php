@@ -16,10 +16,15 @@ use App\Form\CityType;
 use App\Enum\UserRolesEnum;
 use App\Enum\PagesEnum;
 
+/**
+ * @author Paweł Lodzik <Pawemol12@gmail.com>
+ */
 class CitiesController extends AbstractController
 {
     /**
      * @Route("/cities", name="cities")
+     * @param CityRepository $cityRepository
+     * @return Response
      */
     public function index(CityRepository $cityRepository)
     {

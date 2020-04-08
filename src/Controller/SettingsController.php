@@ -10,15 +10,22 @@ use App\Form\SettingsForm;
 use App\Repository\ApiSettingsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use App\Enum\PagesEnum;
 
+/**
+ * @author Paweł Lodzik <Pawemol12@gmail.com>
+ */
 class SettingsController extends AbstractController
 {
     /**
      * @Route("/settings", name="settings")
+     * @param ApiSettingsRepository $apiSettingsRepository
+     * @return Response
      */
     public function index(ApiSettingsRepository $apiSettingsRepository)
     {
@@ -34,6 +41,10 @@ class SettingsController extends AbstractController
 
     /**
      * @Route("/settings/save", name="settings_save")
+     * @param Request $request
+     * @param ApiSettingsRepository $apiSettingsRepository
+     * @param TranslatorInterface $translator
+     * @return RedirectResponse|Response
      */
     public function saveSettings(Request $request, ApiSettingsRepository $apiSettingsRepository, TranslatorInterface $translator)
     {
@@ -62,6 +73,7 @@ class SettingsController extends AbstractController
     }
 
     /**
+     * @param ApiSettingsRepository $apiSettingsRepository
      * @return FormInterface
      */
     private function createSettingsForm(ApiSettingsRepository $apiSettingsRepository)
@@ -82,6 +94,10 @@ class SettingsController extends AbstractController
         ]);
     }
 
+    /**
+     * @param array $formData
+     * @param ApiSettingsRepository $apiSettingsRepository
+     */
     private function saveSettingsForm(array $formData, ApiSettingsRepository $apiSettingsRepository)
     {
         $apiKey = $apiSettingsRepository->findOneByName(ApiSettingsEnum::API_KEY);

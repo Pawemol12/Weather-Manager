@@ -10,6 +10,9 @@ use App\Exception\ApiNotConfiguredException;
 use App\Exception\ApiResponseException;
 use App\Repository\ApiSettingsRepository;
 
+/**
+ * @author Paweł Lodzik <Pawemol12@gmail.com>
+ */
 class WeatherApiService
 {
 

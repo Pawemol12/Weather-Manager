@@ -1,8 +1,10 @@
 <?php
 
-
 namespace App\Enum;
 
+/**
+ * @author Paweł Lodzik <Pawemol12@gmail.com>
+ */
 abstract class AlertsEnum {
 
     const ALERT_TYPE_INFO = 0;

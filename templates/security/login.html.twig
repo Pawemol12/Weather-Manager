@@ -28,12 +28,6 @@
                             {% if error %}
                                 <span class="error">{{ error.messageKey|trans(error.messageData, 'security') }}</span>
                             {% endif %}
-                            {% for flash_message in app.session.flashbag.get('error') %}
-                                <div class="flash-notice">
-                                    <span class="error">{{ flash_message }}</span>
-                                </div>
-                            {% endfor %}
-
                             <button type="submit" class=" btn btn-block mybtn btn-primary"><i class="fas fa-sign-in-alt"></i> Login</button>
                         </div>
                     </form>
@@ -43,5 +37,4 @@
     </div>
 {% endblock %}
 {% block javascripts %}
-    <script src="{{ asset('js/login_form.js') }}"></script>
 {% endblock %}

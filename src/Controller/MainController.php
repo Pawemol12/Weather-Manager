@@ -7,8 +7,10 @@ use App\Exception\ApiCurlRequestException;
 use App\Exception\ApiNotConfiguredException;
 use App\Exception\ApiResponseException;
 use DateTime;
+use Exception;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Repository\CityRepository;
@@ -19,11 +21,14 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 /**
  * Głowny kontroller, strona główna
  *
- * @author Pawemol
+ * @author Paweł Lodzik <Pawemol12@gmail.com>
  */
 class MainController extends AbstractController {
+
     /**
      * @Route("/", name="index")
+     * @param Request $request
+     * @return Response
      */
     public function index(Request $request) {
         $weatherShowForm = $this->createWeatherShowForm();
@@ -35,6 +40,12 @@ class MainController extends AbstractController {
 
     /**
      * @Route("/weather/show", name="show_weather")
+     * @param Request $request
+     * @param WeatherApiService $weatherApiService
+     * @param CityRepository $cityRepository
+     * @param TranslatorInterface $translator
+     * @return Response
+     * @throws Exception
      */
     public function showWeather(Request $request, WeatherApiService $weatherApiService, CityRepository $cityRepository, TranslatorInterface $translator) {
         $weatherShowForm = $this->createWeatherShowForm();
